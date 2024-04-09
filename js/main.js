@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 
     $('.about').on('click', function () {
-        $(".computer").attr("src", "../src/img/computer_click.svg");
+        $(".computer").attr("src", "./src/img/computer_click.svg");
         $('#about').show();
         $('#about').removeClass('hidden');
         $('.abt').css({backgroundColor:"#0D0907", color:"#f5f5f5"});
@@ -23,12 +23,12 @@ $(document).ready(function () {
     $('.projects').on('click', function () {
         $('#projects').show();
         $('#projects').removeClass('hidden');
-        $(".memory1").attr("src", "../src/img/memory_click.svg");
+        $(".memory1").attr("src", "./src/img/memory_click.svg");
         $('.proj').css({backgroundColor:"#0D0907", color:"#f5f5f5"});
     });
 
     $('.posts').on('click', function () {
-        $(".write").attr("src", "../src/img/write_click.svg");
+        $(".write").attr("src", "./src/img/write_click.svg");
         $('#posts').show();
         $('#posts').removeClass('hidden');
         $('.pst').css({backgroundColor:"#0D0907", color:"#f5f5f5"});
@@ -38,7 +38,7 @@ $(document).ready(function () {
         console.log('click close');
         // let parent = $(this).parent().parent()
         $(this).parent().parent().addClass('hidden');
-        $(".memory1").attr("src", "../src/img/memory.svg");
+        $(".memory1").attr("src", "./src/img/memory.svg");
         $('.proj').css({backgroundColor:"#f5f5f5", color:"#0D0907"}).stop();
     });
 
