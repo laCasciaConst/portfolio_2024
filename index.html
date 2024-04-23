@@ -98,11 +98,11 @@
                     </li>
                 </ul>
             </nav>
-            <section class="desktop-folder desktop-folder_small under" id="portfolio">
+            <section class="desktop-folder desktop-folder_small" id="portfolio_intrd" z-index="99">
                 <div class="desktop-folder__title drag">
                     <div class="desktop-folder__title-background">
                         <span class="desktop-folder__title-span">New !</span>
-                        <div class="solid">
+                        <div class="solid" display="block">
                             <hr class="num1" />
                             <hr class="num1" />
                             <hr class="num1" />
@@ -119,7 +119,7 @@
                     <button class="close"></button>
                 </div>
             </section>
-            <section class="desktop-folder desktop-folder_open under hidden" id="portfolio">
+            <section class="desktop-folder desktop-folder_open hidden" id="portfolio">
                 <div class="desktop-folder__title drag">
                     <div class="desktop-folder__title-background">
                         <span class="desktop-folder__title-span">Portfolio 2024</span>
@@ -137,16 +137,80 @@
                             <span class="desktop-folder__exp-span right-span">128MB available</span>
                         </div>
                     </div>
-                    <button class="close"></button>
+                    <button class="memory-close"></button>
                 </div>
                 <div class="folder-content__wrap-overflow">
                     <a href="#portfolio24" class="latestwork-btn"></a>
                 </div>
+                <div class="faux-scroll">
+                    <div class="faux-box v1"></div>
+                    <div class="faux-box v2"></div>
+                </div>
             </section>
-            <section class="desktop-folder desktop-folder_large under" id="projects">
+            <section class="desktop-folder desktop-folder_large hidden" id="projects">
                 <div class="desktop-folder__title drag">
                     <div class="desktop-folder__title-background">
                         <span class="desktop-folder__title-span">Projects</span>
+                        <div class="solid">
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                        </div>
+                        <div class="desktop-folder__exp">
+                            <span class="desktop-folder__exp-span left-span">5 items</span>
+                            <span class="desktop-folder__exp-span center-span">2.8MB in disk</span>
+                            <span class="desktop-folder__exp-span right-span">128MB available</span>
+                        </div>
+                    </div>
+                    <button class="memory-close"></button>
+                </div>
+                <div class="folder-content__wrap-overflow">
+                    <a href="#projects" class="latestwork-btn"></a>
+                </div>
+                <div class="faux-scroll">
+                    <div class="faux-box v1"></div>
+                    <div class="faux-box v2"></div>
+                </div>
+            </section>
+            <section class="desktop-folder desktop-folder_open hidden" id="about">
+                <div class="desktop-folder__title drag">
+                    <div class="desktop-folder__title-background">
+                        <span class="desktop-folder__title-span">About Me !</span>
+                        <div class="solid">
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                        </div>
+                        <div class="desktop-folder__exp">
+                            <span class="desktop-folder__exp-span left-span">Last update : 23 April 2024</span>
+                            <!-- <span class="desktop-folder__exp-span center-span">2.8MB in disk</span> -->
+                            <!-- <span class="desktop-folder__exp-span right-span">128MB available</span> -->
+                        </div>
+                    </div>
+                    <button class="computer-close"></button>
+                </div>
+                <div class="folder-content__wrap-overflow about">
+
+                </div>
+                <div class="faux-scroll-v">
+                    <div class="faux-box v1"></div>
+                    <div class="faux-box v2"></div>
+                </div>
+                <div class="faux-scroll">
+                    <div class="faux-box v1"></div>
+                    <div class="faux-box v2"></div>
+                </div>
+            </section>
+            <section class="desktop-folder desktop-folder_large hidden" id="post1">
+                <div class="desktop-folder__title drag">
+                    <div class="desktop-folder__title-background">
+                        <span class="desktop-folder__title-span">post Title</span>
                         <div class="solid">
                             <hr class="num1" />
                             <hr class="num1" />
@@ -161,7 +225,7 @@
                             <span class="desktop-folder__exp-span right-span">128MB available</span>
                         </div>
                     </div>
-                    <button class="close"></button>
+                    <button class="post-close"></button>
                 </div>
                 <div class="folder-content__wrap-overflow">
                     <a href="#projects" class="latestwork-btn"></a>
@@ -389,15 +453,45 @@
                     </h4>
                 </div>
                 <div class="faux-scroll">
-                    <div class="faux-box"></div>
+                    <div class="faux-box v1"></div>
+                    <div class="faux-box v2"></div>
                 </div>
+            </section>
+            <section class="desktop-folder desktop-folder_menu hidden" id="posts">
+                <div class="desktop-folder__title drag">
+                    <div class="desktop-folder__title-background">
+                        <span class="desktop-folder__title-span">Posts</span>
+                        <div class="solid">
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                            <hr class="num1" />
+                        </div>
+                        <div class="desktop-folder__exp">
+                            <span class="desktop-folder__exp-span left-span">N items</span>
+                            <span class="desktop-folder__exp-span center-span">2.8MB in disk</span>
+                            <span class="desktop-folder__exp-span right-span">128MB available</span>
+                        </div>
+                    </div>
+                    <button class="post-close"></button>
+                </div>
+                <div class="folder-content__wrap-overflow">
+                    <a href="#posts"></a>
+                    <div class="post_menus"></div>
+                </div>
+                <!-- <div class="faux-scroll">
+                    <div class="faux-box v1"></div>
+                    <div class="faux-box v2"></div>
+                </div> -->
             </section>
         </div>
     </main>
     <footer class="contact-info hidden">
     </footer>
     <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="./js/jquery.easyDrag.js"></script>
     <script src="./js/main.js"></script>
 
