@@ -584,7 +584,7 @@ h4 {
   text-align: center;
 }
 
-@media all and (min-width: 1320px) and (min-height: 900px) and (orientation: landscape) {
+@media all and (min-width: 1024px) and (min-height: 900px) and (orientation: landscape) {
   .desktop-folder {
     box-shadow: 0.3rem 0.3rem 0 var(--black),
       -2px -2px 10px 4px rgba(0, 0, 0, 0.3);
@@ -1043,9 +1043,6 @@ h4 {
     border-top: var(--border);
     border-left: var(--border);
   }
-}
-
-@media screen and (min-width: 1024px) and (min-height: 900px) and (orientation: landscape) {
 }
 
 /* tablet */
