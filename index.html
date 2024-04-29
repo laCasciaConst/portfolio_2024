@@ -4,12 +4,21 @@
 <!-- head : metadonnées et liens du site -->
 
 <head>
+    <!-- meta -->
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="subject" content="Graphic Design Portfolio" />
+    <meta http-equiv="Title" content="Portfolio Lita Shin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Graphic designer, illustrator and visual artist from Korea, based on France." />
+    <meta name="date" content="2024-04-24" />
+    <meta name="keywords" content="Lita Shin" />
+    <meta name="robots" content="noindex, follow" />
+    <meta content="ko_KR" property="og:locale" />
+    <meta content="">
+    <!-- //meta -->
     <!-- infos sur le site -->
     <title>Lita Shin</title>
-    <meta name="description" content="Graphic designer, illustrator and visual artist from Korea, based on France.">
     <!-- icone de votre site -->
     <link rel="icon" href="./favicon.ico" />
     <!-- styles -->
@@ -78,19 +87,19 @@
             <nav class="first-nav">
                 <ul class="nav_basic">
                     <li class="about first-nav__icon">
-                        <a href="#about" class="drag link_no-style">
+                        <a class="drag link_no-style">
                             <img class="computer" src="./src/img/computer.svg" alt="yet">
                             <span class="first-nav__title abt">About</span>
                         </a>
                     </li>
                     <li class="projects first-nav__icon">
-                        <a href="#projects" class="drag link_no-style">
+                        <a class="drag link_no-style">
                             <img data class="memory1" src="./src/img/memory.svg" alt="yet" id="memory_px">
                             <span class="first-nav__title proj">Projects</span>
                         </a>
                     </li>
                     <li class="posts first-nav__icon">
-                        <a href="#posts" class="drag link_no-style">
+                        <a class="drag link_no-style">
                             <img class="write" src="./src/img/write.svg" alt="yet">
                             <span class="first-nav__title pst">Posts</span>
                         </a>
@@ -124,9 +133,9 @@
                             <hr class="num1" />
                         </div>
                     </div>
-                    <button class="memory-close"></button>
+                    <button class="close"></button>
                 </div>
-                <div class="folder-content__wrap-overflow">
+                <div class="folder-content">
                     <a href="#portfolio24" class="latestwork-btn"></a>
                 </div>
                 <div class="faux-scroll">
@@ -152,10 +161,11 @@
                     </div>
                     <button class="memory-close"></button>
                 </div>
-                <div class="folder-content__wrap-overflow">
-                    <ul>
+                <div class="folder-content">
+                    <ul class="folder-content__wrap-overflow">
                         <li>
-                            <a href="https://lacasciaconst.github.io/alanTuring/index.html" target='_blank' class="link_no-style">
+                            <a href="https://lacasciaconst.github.io/alanTuring/index.html" target='_blank'
+                                class="link_no-style">
                                 <img src="./src/img/turing-nb.png" alt="turing">
                                 <span>
                                     Glossaire </br> Alan Turnig
@@ -163,7 +173,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://lacasciaconst.github.io/scam_site/index.html" target='_blank' class="link_no-style">
+                            <a href="https://lacasciaconst.github.io/scam_site/index.html" target='_blank'
+                                class="link_no-style">
                                 <img src="./src/img/dolphin-nb.png" alt="scam dolphin">
                                 <span>
                                     Totally not a </br> scam.Trust </br> me...im a </br> dolphin
@@ -175,7 +186,7 @@
                                 <img src="./src/img/map-nb.png" alt="aled chatgpt">
                                 <span>
                                     Help AI game
-                                </span>                                
+                                </span>
                             </a>
                         </li>
                         <li>
@@ -183,7 +194,7 @@
                                 <img src="./src/img/bruler-nb.png" alt="portfolio '22">
                                 <span>
                                     Portfolio '22 </br> Brûler ce Livre
-                                </span>                                
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -209,7 +220,7 @@
                     </div>
                     <button class="computer-close"></button>
                 </div>
-                <div class="folder-content__wrap-overflow about">
+                <div class="folder-content about">
                     <img alt="portrait" src="./src/img/photo.png">
                     <h2>
                         Lita Shin
@@ -245,7 +256,7 @@
                     </div>
                     <button class="post-close"></button>
                 </div>
-                <div class="folder-content__wrap-overflow">
+                <div class="folder-content">
                     <a href="#projects" class="latestwork-btn"></a>
                     <div class="nak">
                         2／16
@@ -493,9 +504,9 @@
                     </div>
                     <button class="post-close"></button>
                 </div>
-                <div class="folder-content__wrap-overflow">
+                <div class="folder-content">
                     <a href="#posts"></a>
-                    <div class="post_menus"></div>
+                    <div class="folder-content__wrap-overflow"></div>
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_menu hidden" id="edit">
