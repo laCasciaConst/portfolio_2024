@@ -581,6 +581,10 @@ li:hover > .lnb-button {
 
 /* small laptop */
 @media all and (min-width: 1024px) and (min-height: 700px) and (-webkit-min-device-pixel-ratio: 0) and (orientation: landscape) {
+  html {
+    font-size: 16px;
+  }
+  
   .desktop-folder {
     box-shadow: 0.3rem 0.3rem 0 var(--black),
       -2px -2px 10px 4px rgba(0, 0, 0, 0.3);
@@ -728,8 +732,8 @@ li:hover > .lnb-button {
 
         .v2 {
           width: 2rem !important;
-          top: -2px;
-          right: 2rem;
+          top: -2.5px;
+          right: calc(2rem - 1px);
         }
       }
     }
@@ -812,6 +816,18 @@ li:hover > .lnb-button {
       .folder-content {
         margin-top: 2rem;
         height: 28rem;
+      }
+
+      .folder-content__wrap-overflow {
+        width: 39rem;
+        height: auto;
+        margin-bottom: 1rem;
+
+        img.pages {
+          width: inherit;
+          height: auto;
+          margin: 1rem 1rem 0 1rem;
+        }
       }
 
       .faux-scroll {
