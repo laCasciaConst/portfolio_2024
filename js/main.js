@@ -15,13 +15,33 @@ $(document).ready(function () {
     var width = 0; // width 변수를 초기화
     var images = $("li.first-nav__icon img");
 
-    console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", width);
+    console.log(
+      "vw:",
+      vw,
+      "vh:",
+      vh,
+      "rem:",
+      rem,
+      "window width:",
+      windowWidth
+    );
 
     if (windowWidth >= 800 && windowWidth < 1360) {
       var width = (vw * vh * rem) / 3 / 6;
-      console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", "calculated img width:", width);
+      console.log(
+        "vw:",
+        vw,
+        "vh:",
+        vh,
+        "rem:",
+        rem,
+        "width:",
+        "calculated img width:",
+        width
+      );
 
-      images.each(function () {
+      images
+        .each(function () {
           $(this).css({
             width: width + "px",
             height: "auto",
@@ -34,7 +54,17 @@ $(document).ready(function () {
       console.log("The window width is 1360 or more.");
       $(".first-nav__title").css("font-size", "1.5vw");
       var width = (vw * vh * rem) / 3 / 8.7;
-      console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", "calculated img width:", width);
+      console.log(
+        "vw:",
+        vw,
+        "vh:",
+        vh,
+        "rem:",
+        rem,
+        "width:",
+        "calculated img width:",
+        width
+      );
 
       images.each(function () {
         $(this).css({
@@ -45,7 +75,17 @@ $(document).ready(function () {
     } else {
       console.log("The window width is less than 800.");
       var width = (vw * vh * rem) / 3 / 2;
-      console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", "calculated img width:", width);
+      console.log(
+        "vw:",
+        vw,
+        "vh:",
+        vh,
+        "rem:",
+        rem,
+        "width:",
+        "calculated img width:",
+        width
+      );
 
       images.each(function () {
         $(this).css({
@@ -63,7 +103,7 @@ $(document).ready(function () {
   var zIndexCounter = 5;
 
   $(".posts").on("click", function () {
-    $(".write").attr("src", "../src/img/write_click.svg");
+    $(".write").attr("src", "./src/img/write_click.svg");
     $("#portfolio_intrd").css("z-index", "3");
     if ($("#posts").hasClass("hidden")) {
       $("#posts")
@@ -129,7 +169,7 @@ $(document).ready(function () {
   });
 
   $(".projects").on("click", function () {
-    $(".memory1").attr("src", "../src/img/memory_click.svg");
+    $(".memory1").attr("src", "./src/img/memory_click.svg");
     $("#portfolio_intrd").css("z-index", "3");
     if ($("#projects").hasClass("hidden")) {
       $("#projects")
@@ -154,7 +194,7 @@ $(document).ready(function () {
   });
 
   $(".about").on("click", function () {
-    $(".computer").attr("src", "../src/img/computer_click.svg");
+    $(".computer").attr("src", "./src/img/computer_click.svg");
     $("#portfolio_intrd").css("z-index", "3");
     if ($("#about").hasClass("hidden")) {
       $("#about")
@@ -182,21 +222,21 @@ $(document).ready(function () {
     console.log("click close memory");
     // let parent = $(this).parent().parent()
     $(this).parent().parent().addClass("hidden");
-    $(".memory1").attr("src", "../src/img/memory.svg");
+    $(".memory1").attr("src", "./src/img/memory.svg");
     $(".proj").css({ backgroundColor: "#f5f5f5", color: "#0D0907" }).stop();
   });
 
   $("button.computer-close").on("click", function () {
     console.log("click close computer");
     $(this).parent().parent().addClass("hidden");
-    $(".computer").attr("src", "../src/img/computer.svg");
+    $(".computer").attr("src", "./src/img/computer.svg");
     $(".abt").css({ backgroundColor: "#f5f5f5", color: "#0D0907" }).stop();
   });
 
   $("button.post-close").on("click", function () {
     console.log("click close write");
     $(this).parent().parent().addClass("hidden");
-    $(".write").attr("src", "../src/img/write.svg");
+    $(".write").attr("src", "./src/img/write.svg");
     $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" }).stop();
   });
 
@@ -210,16 +250,16 @@ $(document).ready(function () {
     $(this).find(".solid").css("display", "block");
 
     $("section")
-      .not(this)
-      .each(function () {
-        $(this).css("z-index", "5");
-        $(this).find(".solid").css("display", "none");
-      });
+        .not(this)
+        .each(function () {
+            $(this).css("z-index", "5");
+            $(this).find(".solid").css("display", "none");
+        });
 
     if ($(event.target).closest(".portf22").length > 0) {
-      $("#portf22").css("z-index", "101");
+        $("#portf22").css("z-index", "101");
     }
-  });
+});
 
   $("section").easyDrag({
     handle: ".desktop-folder__title",
@@ -228,13 +268,40 @@ $(document).ready(function () {
     ontop: true, // si l'élément draggé doit venir au 1er plan ou pas
     clickable: true, // si l'élément doit aussi être cliquable
   });
+  
+  $(".desktop-folder__title").on("dragstart", function (event) {
+    var $parentSection = $(this).parent();
+    $parentSection.data("original-zindex", $parentSection.css("z-index"));
+    $parentSection.css("z-index", 999);
+    event.stopPropagation();  // 중요: 이벤트 전파 중지
+});
 
-  $("section").on("dragstart", function () {
-    $(this).css("z-index", 999);
-  });
-  $("section").on("dragend", function () {
-    $(this).css("z-index", "");
-  });
+$(".desktop-folder__title").on("dragend", function (event) {
+    var $parentSection = $(this).parent();
+    $parentSection.css("z-index", $parentSection.data("original-zindex"));
+    event.stopPropagation();  // 중요: 이벤트 전파 중지
+});
+
+  $("[data-tip]")
+    .mouseenter(function (e) {
+      $("#tooltip")
+        .text($(this).attr("data-tip"))
+        .css({
+          position: "absolute",
+          display: "block",
+          left: e.pageX + 10 + "px", 
+          top: e.pageY + 10 + "px", 
+        });
+    })
+    .mousemove(function (e) {
+      $("#tooltip").css({
+        left: e.pageX + 10 + "px",
+        top: e.pageY + 10 + "px",
+      });
+    })
+    .mouseout(function () {
+      $("#tooltip").hide(); 
+    });
 });
 
 (function () {
