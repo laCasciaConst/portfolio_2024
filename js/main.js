@@ -9,32 +9,50 @@ $(document).ready(function () {
 
   function updateElementWidth() {
     var windowWidth = $(window).width(); // 현재 창의 너비를 저장
-    if (windowWidth >= 800 && windowWidth < 1320) {
-      // 창 너비가 800 이상, 1320 미만인 경우에만 실행
-      var vw = windowWidth / 120;
-      var vh = $(window).height() / 100;
-      var rem = parseFloat($("html").css("font-size"));
+    var vw = windowWidth / 120;
+    var vh = $(window).height() / 100;
+    var rem = parseFloat($("html").css("font-size"));
+    var width = 0; // width 변수를 초기화
+    var images = $("li.first-nav__icon img");
 
-      console.log("vw:", vw, "vh:", vh, "rem:", rem);
+    console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", width);
 
+    if (windowWidth >= 800 && windowWidth < 1360) {
       var width = (vw * vh * rem) / 3 / 6;
-      console.log("Calculated width:", width);
+      console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", "calculated img width:", width);
 
-      var images = $("li.first-nav__icon img");
-      // console.log("Number of images selected:", images.length);
-      images
-        .each(function () {
+      images.each(function () {
           $(this).css({
             width: width + "px",
             height: "auto",
           });
-          console.log(width);
         })
         .attr("src", function () {
           return $(this).attr("src");
         });
+    } else if (windowWidth > 1360) {
+      console.log("The window width is 1360 or more.");
+      $(".first-nav__title").css("font-size", "1.5vw");
+      var width = (vw * vh * rem) / 3 / 8.7;
+      console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", "calculated img width:", width);
+
+      images.each(function () {
+        $(this).css({
+          width: width + "px",
+          height: "auto",
+        });
+      });
     } else {
-      console.log("The window width is outside the specified range.");
+      console.log("The window width is less than 800.");
+      var width = (vw * vh * rem) / 3 / 2;
+      console.log("vw:", vw, "vh:", vh, "rem:", rem, "width:", "calculated img width:", width);
+
+      images.each(function () {
+        $(this).css({
+          width: width + "px",
+          height: "auto",
+        });
+      });
     }
   }
 
@@ -190,17 +208,18 @@ $(document).ready(function () {
   $("section").click(function (event) {
     $(this).css("z-index", "99");
     $(this).find(".solid").css("display", "block");
-  
-    $("section").not(this).each(function () {
-      $(this).css("z-index", "5");
-      $(this).find(".solid").css("display", "none");
-    });
-  
+
+    $("section")
+      .not(this)
+      .each(function () {
+        $(this).css("z-index", "5");
+        $(this).find(".solid").css("display", "none");
+      });
+
     if ($(event.target).closest(".portf22").length > 0) {
-      $("#portf22").css("z-index", "101"); 
+      $("#portf22").css("z-index", "101");
     }
   });
-  
 
   $("section").easyDrag({
     handle: ".desktop-folder__title",
