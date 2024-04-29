@@ -87,19 +87,19 @@
             <nav class="first-nav">
                 <ul class="nav_basic">
                     <li class="about first-nav__icon">
-                        <a class="drag link_no-style">
+                        <a class="link_no-style">
                             <img class="computer" src="./src/img/computer.svg" alt="yet">
                             <span class="first-nav__title abt">About</span>
                         </a>
                     </li>
                     <li class="projects first-nav__icon">
-                        <a class="drag link_no-style">
+                        <a class="link_no-style">
                             <img data class="memory1" src="./src/img/memory.svg" alt="yet" id="memory_px">
                             <span class="first-nav__title proj">Projects</span>
                         </a>
                     </li>
                     <li class="posts first-nav__icon">
-                        <a class="drag link_no-style">
+                        <a class="link_no-style">
                             <img class="write" src="./src/img/write.svg" alt="yet">
                             <span class="first-nav__title pst">Posts</span>
                         </a>
@@ -107,7 +107,7 @@
                 </ul>
             </nav>
             <section class="desktop-folder desktop-folder_small" id="portfolio_intrd">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">New !</span>
                     <div class="solid" display="block">
                         <hr class="num1" />
@@ -121,7 +121,7 @@
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_large hidden" id="portf22">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <div class="desktop-folder__title-background">
                         <span class="desktop-folder__title-span">Portfolio 2022</span>
                         <div class="solid">
@@ -144,7 +144,7 @@
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_menu hidden" id="projects">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">Projects</span>
                     <div class="solid">
                         <hr class="num1" />
@@ -163,7 +163,8 @@
                 </div>
                 <div class="folder-content">
                     <ul class="folder-content__wrap-overflow">
-                        <li>
+                        <div id="tooltip">Tooltip</div>
+                        <li data-tip="Glossaire Alan Turing">
                             <a href="https://lacasciaconst.github.io/alanTuring/index.html" target='_blank'
                                 class="link_no-style">
                                 <img src="./src/img/turing-nb.png" alt="turing">
@@ -172,16 +173,16 @@
                                 </span>
                             </a>
                         </li>
-                        <li>
+                        <li data-tip="Totally not a scam.Trust me...im a dolphin">
                             <a href="https://lacasciaconst.github.io/scam_site/index.html" target='_blank'
                                 class="link_no-style">
                                 <img src="./src/img/dolphin-nb.png" alt="scam dolphin">
                                 <span>
-                                    Totally not a </br> scam.Trust </br> me...im a </br> dolphin
+                                    Totally not a </br> scam.Trust...
                                 </span>
                             </a>
                         </li>
-                        <li>
+                        <li data-tip="Help AI game">
                             <a href="https://lacasciaconst.github.io/hey_aled/" target='_blank' class="link_no-style">
                                 <img src="./src/img/map-nb.png" alt="aled chatgpt">
                                 <span>
@@ -189,7 +190,7 @@
                                 </span>
                             </a>
                         </li>
-                        <li>
+                        <li data-tip="Portfolio 2022, 'Brûler ce Livre'">
                             <a href="#projects" class="link_no-style portf22">
                                 <img src="./src/img/bruler-nb.png" alt="portfolio '22">
                                 <span>
@@ -205,7 +206,7 @@
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_open hidden" id="about">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">About Me !</span>
                     <div class="solid">
                         <hr class="num1" />
@@ -239,7 +240,7 @@
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_long hidden" id="post1">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">post Title</span>
                     <div class="solid">
                         <hr class="num1" />
@@ -487,7 +488,7 @@
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_menu hidden" id="posts">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">Posts</span>
                     <div class="solid">
                         <hr class="num1" />
@@ -510,7 +511,7 @@
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_menu hidden" id="edit">
-                <div class="desktop-folder__title drag">
+                <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">Edit</span>
                     <div class="solid">
                         <hr class="num1" />
@@ -537,7 +538,7 @@
     <footer class="contact-info hidden">
     </footer>
     <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/jquery.easyDrag.js"></script>
     <script src="./js/main.js"></script>
 
