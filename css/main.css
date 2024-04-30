@@ -732,7 +732,7 @@ li:hover > .lnb-button {
 
         .v2 {
           width: 2rem !important;
-          top: -2.5px;
+          top: -2px;
           right: calc(2rem - 1px);
         }
       }
@@ -913,7 +913,7 @@ li:hover > .lnb-button {
 
         .v2 {
           right: -2.15rem;
-          top: -2.5px;
+          top: -2px;
         }
       }
 
@@ -1042,7 +1042,7 @@ li:hover > .lnb-button {
       width: 1.3rem;
       height: 1.3rem;
       left: 1.3rem;
-      top: 0.3rem;
+      top: 0.27rem;
     }
 
     .right-span {
@@ -1251,430 +1251,29 @@ li:hover > .lnb-button {
 
 /* big laptop, iPad pro */
 @media screen and (min-width: 1360px) and (min-height: 860px) and (orientation: landscape) {
-  .desktop-folder {
-    box-shadow: 0.3rem 0.3rem 0 var(--black),
-      -2px -2px 10px 4px rgba(0, 0, 0, 0.3);
+  #about {
+    left: 17% !important;
+    top: 4%;
   }
 
-  /* header sets */
-  .header {
-    border-bottom: var(--border);
+  #projects {
+    bottom: 15% !important;
+    right: 9.5% !important;
   }
 
-  .header__item {
-    height: 3rem;
+  #posts {
+    left: 12% !important;
+    bottom: 10% !important;
   }
 
-  .time {
-    font-size: 1.5rem;
-    -webkit-transform: translate(-2.5rem, 0.8rem);
-    transform: translate(-2.5rem, 0.8rem);
+  #edit {
+    left: calc((100vw - 31rem) * 0.5);
+    top: calc((100vh - 24rem) * 0.45);
   }
 
-  .under {
-    box-shadow: 0.3rem 0.3rem 0 var(--black);
-  }
-
-  .lnb {
-    border: var(--border);
-  }
-
-  .lnb-button {
-    font-size: 1.2rem;
-    height: inherit;
-    padding: 0 2rem 0 2rem;
-  }
-
-  .lnb__item {
-    font-size: 1.2rem;
-    padding: 0.1rem 2rem 0.1rem 2rem;
-  }
-
-  .header__item_strong {
-    padding: 0 1.5rem 0 2.5rem;
-    transform: translateY(0.95rem);
-  }
-
-  #home-icon {
-    margin-left: 2.5rem;
-    width: 2.7rem;
-    -webkit-transform: translateY(0.25rem);
-    transform: translateY(0.25rem);
-  }
-
-  main {
-    top: 48px;
-    height: calc(100vh - 48px);
-    width: 99.3vw;
-    right: 0.5vw;
-  }
-
-  .main {
-    top: calc(6vh + 2px);
-    width: inherit;
-    height: calc(100vh - 55px);
-    /* window 창 설정 */
-
-    .about {
-      overflow: hidden;
-    }
-
-    #portfolio {
-      top: 20vh;
-      left: 25vw;
-    }
-
-    #about {
-      left: 16vw;
-      top: 4vh;
-    }
-
-    #projects {
-      top: 16vh;
-      right: 4vw;
-    }
-
-    #posts {
-      left: 3vw;
-      top: 38vh;
-    }
-
-    .desktop-folder_small {
-      width: 20rem;
-      height: 20rem;
-      left: calc((100vw - 20rem) * 0.5);
-      top: calc((100vh - 20rem) * 0.45);
-
-      .solid {
-        width: 19.55rem;
-      }
-
-      .desktop-folder__title {
-        height: 2.55rem;
-      }
-    }
-
-    .desktop-folder_open {
-      width: 36rem;
-      height: 27rem;
-
-      .solid {
-        width: 35.6rem;
-      }
-
-      .folder-content {
-        overflow-x: hidden;
-        height: 19.7rem;
-      }
-
-      .faux-scroll {
-        width: 34.1rem;
-
-        .faux-box {
-          top: -3px;
-        }
-      }
-    }
-
-    .desktop-folder_large {
-      width: 47rem;
-      height: 39rem;
-
-      .solid {
-        width: 46.6rem;
-      }
-
-      .folder-content {
-        overflow-x: hidden;
-        height: 31.7rem;
-      }
-
-      .faux-scroll {
-        width: calc(44.9rem + 3.5px);
-
-        .v2 {
-          top: -3px;
-        }
-      }
-
-      .center-span {
-        right: 41.5%;
-      }
-    }
-
-    .desktop-folder_long {
-      top: 2vh;
-      right: 2vw;
-      width: 35rem;
-      height: 46rem;
-
-      .solid {
-        width: 34.6rem;
-      }
-
-      .folder-content {
-        overflow-x: hidden;
-        height: 38.7rem;
-      }
-
-      .faux-scroll {
-        width: calc(32.9rem + 3.5px);
-
-        .v2 {
-          top: -3px;
-          right: calc(-1 * (2.1rem + 3px));
-        }
-      }
-
-      .center-span {
-        right: 41.5%;
-      }
-
-      h4 {
-        font-size: 20px;
-        margin: 2.5rem 4rem 3.5rem 4rem;
-      }
-    }
-
-    .desktop-folder_menu {
-      width: 37rem;
-      height: 30rem;
-
-      .solid {
-        width: 36.65rem;
-      }
-
-      .center-span {
-        right: 40%;
-      }
-
-      .folder-content {
-        height: 24.8rem;
-      }
-
-      .folder-content__wrap-overflow {
-        width: 100rem;
-        height: 27rem;
-        padding: 2rem;
-      }
-    }
-
-    .desktop-folder__title {
-      height: 5.2rem;
-      padding: 0.3rem 0.2rem;
-    }
-
-    .desktop-folder__title-span {
-      padding: 0 1rem;
-      font-size: 1.7rem;
-      letter-spacing: -1.5px;
-    }
-
-    .desktop-folder__exp {
-      height: 2.6rem;
-      top: 37.5px;
-    }
-
-    .desktop-folder__exp-span {
-      font-size: 1.1rem;
-    }
-
-    .folder-content {
-      box-sizing: border-box;
-      margin-top: 5.2rem;
-      width: inherit;
-    }
-
-    .close,
-    .post-close,
-    .memory-close,
-    .computer-close {
-      position: absolute;
-      border: var(--border);
-      width: 1.6rem;
-      height: 1.6rem;
-      left: 1.3rem;
-      top: 0.4rem;
-    }
-
-    .right-span {
-      position: absolute;
-      right: 1.8rem;
-    }
-
-    .left-span {
-      position: absolute;
-      left: 1.8rem;
-    }
-
-    .center-span {
-      position: absolute;
-    }
-
-    .num1 {
-      border-top: var(--border);
-      position: relative;
-      margin-bottom: 0.04rem;
-    }
-
-    .solid {
-      top: -1.65rem;
-    }
-
-    .faux-scroll {
-      position: relative;
-      background-color: var(--white);
-      height: 2.1rem;
-      border-top: var(--border);
-      border-right: var(--border);
-
-      .faux-box {
-        position: absolute;
-        height: 2.1rem;
-        width: 2.1rem;
-        border-right: var(--border);
-      }
-
-      .v1 {
-        left: 0rem;
-        position: absolute;
-      }
-
-      .v2 {
-        right: calc(-1 * (2.1rem + 3px));
-        width: calc(4.2rem + 3px);
-        height: calc(2.1rem + 3px);
-        top: -2.5px;
-        position: absolute;
-        border: var(--border);
-      }
-    }
-
-    .faux-scroll-v {
-      position: absolute;
-      width: 2.1rem;
-      height: calc(315px + 0.18rem);
-      top: 5.2rem;
-      right: 0px;
-      border-left: var(--border);
-
-      .faux-box {
-        position: absolute;
-        height: 2.1rem;
-        width: 2.1rem;
-      }
-
-      .v1 {
-        left: 0;
-        top: 0;
-        border-bottom: var(--border);
-        position: absolute;
-      }
-
-      .v2 {
-        right: 0;
-        bottom: 0;
-        position: absolute;
-        border-top: var(--border);
-      }
-    }
-  }
-
-  /* icon sets */
-  .first-nav {
-    padding-top: 8vh;
-    padding-left: 4vh;
-    width: 8rem;
-  }
-
-  .first-nav__icon {
-    padding-bottom: 2rem;
-
-    img {
-      width: 5vw;
-      height: auto;
-      z-index: 2;
-      position: relative;
-    }
-  }
-
-  .first-nav__title {
-    position: relative;
-    z-index: 1;
-    font-size: 1.5rem;
-    padding: 0 6px;
-    transform: translateY(-4.5px);
-    -webkit-transform: translateY(-4.5px);
-    box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  /* 스크롤바 */
-  ::-webkit-scrollbar-track-piece:vertical {
-    border-left: var(--border);
-    border-top: var(--border);
-  }
-
-  ::-webkit-scrollbar-track-piece:horizontal {
-    border-left: var(--border);
-    border-top: var(--border);
-  }
-
-  ::-webkit-scrollbar {
-    box-sizing: border-box;
-    width: 2.3rem;
-  }
-
-  ::-webkit-scrollbar:horizontal {
-    height: 2.3rem;
-    border-top: var(--border);
-  }
-
-  ::-webkit-scrollbar-thumb:vertical {
-    border-top: var(--border);
-    border-bottom: var(--border);
-    border-left: var(--border);
-    background-color: var(--white);
-    min-height: 6rem;
-  }
-
-  ::-webkit-scrollbar-thumb:horizontal {
-    background-color: var(--white);
-    min-width: 6rem;
-    border-top: var(--border);
-    border-right: var(--border);
-    border-left: var(--border);
-  }
-
-  ::-webkit-scrollbar-button:vertical:increment {
-    /* background: url(../src/img/ico_cigarette\ and\ coffee\ copy.svg); */
-    height: 2.3rem;
-    width: 2.3rem;
-    border-left: var(--border);
-    border-top: var(--border);
-  }
-
-  ::-webkit-scrollbar-button:horizontal:decrement {
-    border-top: var(--border);
-    height: 2.3rem;
-    width: 2.3rem;
-  }
-
-  ::-webkit-scrollbar-button:vertical:decrement {
-    border-left: var(--border);
-    width: 2.3rem;
-    height: 2.3rem;
-  }
-
-  ::-webkit-scrollbar-button:horizontal:increment {
-    height: 2.3rem;
-    width: 2.3rem;
-    border-top: var(--border);
-    border-left: var(--border);
-  }
-
-  ::-webkit-scrollbar-corner {
-    border-top: var(--border);
-    border-left: var(--border);
+  #portf22 {
+    left: calc((100vw - 43rem) * 0.28) !important;
+    top: calc((100vh - 32rem) * 0.22) !important;
   }
 }
 
