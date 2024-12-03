@@ -1036,7 +1036,8 @@ li:hover > .lnb-button {
     .close,
     .post-close,
     .memory-close,
-    .computer-close {
+    .computer-close,
+    .drafts-close {
       position: absolute;
       border: var(--bor2);
       width: 1.3rem;
