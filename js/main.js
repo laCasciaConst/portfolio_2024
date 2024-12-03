@@ -103,7 +103,7 @@ $(document).ready(function () {
         $(".write").attr("src", "./src/img/write.svg");
         $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
-      ".drafts-close": () => {
+      ".draft-close": () => {
         $(".draft_folder").attr("src", "./src/img/draft_folder.svg");
         $(".dft").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
