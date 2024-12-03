@@ -100,12 +100,52 @@ $(document).ready(function () {
     console.log("Resized");
   });
 
+  $(".posts, .draft").on("click", function () {
+    const isPosts = $(this).hasClass("posts");
+    const imgSelector = isPosts ? ".write" : ".draft_folder";
+    const folderSelector = isPosts ? "#posts" : "#drafts";
+    const bgColorClass = isPosts ? ".pst" : ".dft";
+    const folderImageClicked = isPosts
+      ? "./src/img/write_click.svg"
+      : "./src/img/draft_folder_click.svg";
+
+    $(imgSelector).attr("src", folderImageClicked);
+
+    $("#portfolio_intrd").css("z-index", "3");
+
+    if ($(folderSelector).hasClass("hidden")) {
+      $(folderSelector)
+        .removeClass("hidden")
+        .css("z-index", zIndexCounter + 9);
+      zIndexCounter++;
+    } else {
+      const currentZIndex = parseInt($(folderSelector).css("z-index"), 10);
+      $(folderSelector).css("z-index", currentZIndex + 9);
+    }
+
+    if (zIndexCounter > 97) {
+      zIndexCounter = 10;
+    }
+
+    $(".desktop-folder")
+      .not(folderSelector)
+      .not("#portfolio_intrd")
+      .each(function () {
+        if (!$(this).hasClass("hidden")) {
+          $(this).css("z-index", zIndexCounter++);
+        }
+      });
+
+    $(".pst, .dft").css({ backgroundColor: "", color: "" });
+    $(bgColorClass).css({ backgroundColor: "#0D0907", color: "#f5f5f5" });
+  });
+
   var zIndexCounter = 5;
 
   function handleFolderClick(selector, imgSelector, imgClickedSrc, colorClass) {
     $(selector).on("click", function () {
       if (imgSelector && imgClickedSrc) {
-        $(imgSelector).attr("src", imgClickedSrc); 
+        $(imgSelector).attr("src", imgClickedSrc);
       }
 
       $("#portfolio_intrd").css("z-index", "3");
@@ -158,16 +198,16 @@ $(document).ready(function () {
   function handleCloseButton(buttonSelector, imgSelector, imgSrc, colorClass) {
     $(buttonSelector).on("click", function () {
       console.log(`click close ${buttonSelector}`);
-      $(this).parent().parent().addClass("hidden"); 
+      $(this).closest(".desktop-folder").addClass("hidden");
 
       if (imgSelector && imgSrc) {
-        $(imgSelector).attr("src", imgSrc); 
+        $(imgSelector).attr("src", imgSrc);
       }
 
       if (colorClass) {
         $(colorClass)
           .css({ backgroundColor: "#f5f5f5", color: "#0D0907" })
-          .stop(); 
+          .stop();
       }
     });
   }
@@ -190,17 +230,22 @@ $(document).ready(function () {
     "./src/img/write.svg",
     ".pst"
   );
-  handleCloseButton("button.close", null, null, null);
+  handleCloseButton(
+    "button.draft-close",
+    ".draft_folder",
+    "./src/img/draft_folder.svg",
+    ".dft"
+  );
 
   $("section").click(function (event) {
-    $(this).css("z-index", "99"); 
-    $(this).find(".solid").css("display", "block"); 
+    $(this).css("z-index", "99");
+    $(this).find(".solid").css("display", "block");
 
     $("section")
-      .not(this) 
+      .not(this)
       .each(function () {
-        $(this).css("z-index", "5"); 
-        $(this).find(".solid").css("display", "none"); 
+        $(this).css("z-index", "5");
+        $(this).find(".solid").css("display", "none");
       });
 
     if ($(event.target).closest(".portf22").length > 0) {
