@@ -70,6 +70,12 @@ $(document).ready(function () {
       icon: ".computer",
       activeClass: ".abt",
     },
+    {
+      selector: ".draft",
+      target: "#drafts",
+      icon: ".draft_folder",
+      activeClass: ".dft",
+    },
   ];
 
   windowBindings.forEach(({ selector, target, icon, activeClass }) => {
@@ -79,7 +85,7 @@ $(document).ready(function () {
   });
 
   $(
-    "button.close, button.memory-close, button.computer-close, button.post-close"
+    "button.close, button.memory-close, button.computer-close, button.post-close, button.drafts-close"
   ).on("click", function () {
     const $parent = $(this).parent().parent();
     $parent.addClass("hidden");
@@ -97,9 +103,9 @@ $(document).ready(function () {
         $(".write").attr("src", "./src/img/write.svg");
         $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
-      ".post-close": () => {
-        $(".write").attr("src", "./src/img/write.svg");
-        $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
+      ".drafts-close": () => {
+        $(".draft_folder").attr("src", "./src/img/draft_folder.svg");
+        $(".dft").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
     };
 
@@ -117,7 +123,7 @@ $(document).ready(function () {
     }
   });
 
-  // Easy drag 
+  // Easy drag
   $("section").easyDrag({
     handle: ".desktop-folder__title",
     container: $(".main"),
