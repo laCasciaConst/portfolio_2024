@@ -666,7 +666,7 @@ li:hover > .lnb-button {
       }
     }
 
-    #projects {
+    #projects, #drafts {
       bottom: 10.5%;
       right: 4.5%;
 
@@ -1259,6 +1259,11 @@ li:hover > .lnb-button {
   #projects {
     bottom: 15% !important;
     right: 9.5% !important;
+  }
+
+  #drafts {
+    bottom: 20% !important;
+    left: 29.5% !important;
   }
 
   #posts {
