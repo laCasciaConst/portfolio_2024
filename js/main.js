@@ -97,6 +97,10 @@ $(document).ready(function () {
         $(".write").attr("src", "./src/img/write.svg");
         $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
+      ".post-close": () => {
+        $(".write").attr("src", "./src/img/write.svg");
+        $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
+      },
     };
 
     const resetIcon = resetIcons[$(this).attr("class")];
