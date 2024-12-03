@@ -27,7 +27,7 @@ $(document).ready(function () {
   $(window).on("resize", updateElementWidth);
 
   function handleWindowInteraction($target, iconSelector, activeClass) {
-    $(".write, .memory1, .computer").attr("src", function () {
+    $(".write, .memory1, .computer, .draft_folder").attr("src", function () {
       return $(this).attr("src").replace("_click", "");
     });
 
