@@ -104,7 +104,7 @@ $(document).ready(function () {
         $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
       ".draft-close": () => {
-        $(".draft_folder").attr("src", "./src/img/draft_folder.svg");
+        $(".draft_folder").attr("src", "./src/img/draft_folder.webp");
         $(".dft").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
       },
     };
