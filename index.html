@@ -108,7 +108,7 @@
                     <li class="draft first-nav__icon">
                         <a class="link_no-style">
                             <img class="draft_folder" src="./src/img/draft_folder.svg" alt="yet">
-                            <span class="first-nav__title dft">Drafts</span>
+                            <span class="first-nav__title dft">3D</span>
                         </a>
                     </li>
                 </ul>
@@ -131,7 +131,7 @@
                     <img src="./src/img/new.jpg" alt="new dolphin" class="projects" style="width: 13rem; height: auto;">
                 </div>
             </section>
-            <section class="desktop-folder desktop-folder_large hidden" id="portf22">
+            <section class="desktop-folder desktop-folder_large hidden portf22" id="portf22">
                 <div class="desktop-folder__title">
                     <div class="desktop-folder__title-background">
                         <span class="desktop-folder__title-span">Portfolio 2022</span>
@@ -144,7 +144,7 @@
                             <hr class="num1" />
                         </div>
                     </div>
-                    <button class="close"></button>
+                    <button class="portf-close"></button>
                 </div>
                 <div class="folder-content">
                     <div class="folder-content__wrap-overflow">
@@ -270,7 +270,8 @@
                     <div class="faux-box v2"></div>
                 </div>
             </section>
-            <section class="desktop-folder desktop-folder_menu " id="post1">
+            <section class="desktop-folder desktop-folder_large youtube hidden" id="3dWorkshop"
+                style="top: 7rem; left: 19rem;">
                 <div class="desktop-folder__title">
                     <span class="desktop-folder__title-span">Workshop 3D S2</span>
                     <div class="solid">
@@ -281,16 +282,11 @@
                         <hr class="num1" />
                         <hr class="num1" />
                     </div>
-                    <div class="desktop-folder__exp">
-                        <span class="desktop-folder__exp-span left-span">2 items</span>
-                        <span class="desktop-folder__exp-span center-span">2.8MB in disk</span>
-                        <span class="desktop-folder__exp-span right-span">128MB available</span>
-                    </div>
                     <button class="post-close"></button>
                 </div>
                 <div class="folder-content">
-                    <a href="#projects" class="latestwork-btn"></a>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/J2Z0i8Vpx5w?si=UvNSw8ML1o3L1ibw"
+                    <a href="#3dWorkshop" class="latestwork-btn"></a>
+                    <iframe width="688" height="444" src="https://www.youtube.com/embed/J2Z0i8Vpx5w?si=UvNSw8ML1o3L1ibw"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -298,6 +294,32 @@
                 <div class="faux-scroll">
                     <div class="faux-box v1"></div>
                     <div class="faux-box v2"></div>
+                </div>
+            </section>
+            <section class="desktop-folder desktop-folder_large youtube hidden" id="3dLogo"
+                style="top: 10rem; left: 23rem;">
+                <div class="desktop-folder__title">
+                    <span class="desktop-folder__title-span">Logo 3D</span>
+                    <div class="solid">
+                        <hr class="num1" />
+                        <hr class="num1" />
+                        <hr class="num1" />
+                        <hr class="num1" />
+                        <hr class="num1" />
+                        <hr class="num1" />
+                    </div>
+                    <button class="post-close"></button>
+                </div>
+                <div class="folder-content">
+                    <a href="#3dWorkshop" class="latestwork-btn"></a>
+                    <iframe width="688" height="420" src="https://www.youtube.com/embed/iRuXrBoawKY?si=MXDIeUSTJgGA8UsD"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="faux-scroll">
+                        <div class="faux-box v1"></div>
+                        <div class="faux-box v2"></div>
+                    </div>
                 </div>
             </section>
             <section class="desktop-folder desktop-folder_menu hidden" id="posts">
@@ -377,12 +399,21 @@
                     <button class="draft-close"></button>
                 </div>
                 <div class="folder-content">
-                    <ul class="folder-content__wrap-overflow">
+                    <ul class="folder-content__wrap-overflow" style="justify-content: left;">
                         <li data-tip="Workshop 3D">
-                            <a href="https://lacasciaconst.github.io/hey_aled/" target='_blank' class="link_no-style">
-                                <img data-tip="Help AI game" src="./src/img/map-nb.png" alt="aled chatgpt">
-                                <span data-tip="Help AI game">
+                            <a href="#3dWorkshop" class="link_no-style  3dworkshop">
+                                <img data-tip="Workshop 3D S2" src="./src/img/dortoir.png" alt="Workshop 3D S2">
+                                <span data-tip="Workshop 3D S2">
                                     Workshop 3D S2
+                                </span>
+                            </a>
+                        </li>
+                        <li data-tip="ESAD 3D Logo">
+                            <a href="#3dLogo" class="link_no-style  3dlogo">
+                                <img data-tip="S3 ESAD Logo Making Class" src="./src/img/logo.jpg"
+                                    alt="S3 ESAD Logo Making Class">
+                                <span data-tip="S3 ESAD Logo Making Class">
+                                    Logo 3D
                                 </span>
                             </a>
                         </li>

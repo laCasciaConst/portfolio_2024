@@ -27,9 +27,16 @@ $(document).ready(function () {
   $(window).on("resize", updateElementWidth);
 
   function handleWindowInteraction($target, iconSelector, activeClass) {
-    $(".write, .memory1, .computer, .draft_folder").attr("src", function () {
-      return $(this).attr("src").replace("_click", "");
-    });
+    if (iconSelector) {
+      const $icon = $(iconSelector);
+      const currentSrc = $icon.attr("src");
+      $icon.attr(
+        "src",
+        currentSrc.includes("_click")
+          ? currentSrc
+          : currentSrc.replace(".svg", "_click.svg")
+      );
+    }
 
     if ($target.hasClass("hidden")) {
       $target.removeClass("hidden");
@@ -45,7 +52,15 @@ $(document).ready(function () {
     });
 
     if (activeClass) {
-      $(activeClass).css({ backgroundColor: "#0D0907", color: "#f5f5f5" });
+      $(".proj, .abt, .pst, .dft").css({
+        backgroundColor: "#f5f5f5",
+        color: "#0D0907",
+      });
+
+      $(activeClass).css({
+        backgroundColor: "#0D0907",
+        color: "#f5f5f5",
+      });
     }
   }
 
@@ -76,6 +91,24 @@ $(document).ready(function () {
       icon: ".draft_folder",
       activeClass: ".dft",
     },
+    { 
+      selector: ".portf22", 
+      target: "#portf22",
+      icon: null, 
+      activeClass: null 
+    },
+    {
+      selector: ".3dworkshop",
+      target: "#3dWorkshop",
+      icon: null,
+      activeClass: null,
+    },
+    {
+      selector: ".3dlogo",
+      target: "#3dLogo",
+      icon: null,
+      activeClass: null,
+    },
   ];
 
   windowBindings.forEach(({ selector, target, icon, activeClass }) => {
@@ -85,32 +118,47 @@ $(document).ready(function () {
   });
 
   $(
-    "button.close, button.memory-close, button.computer-close, button.post-close, button.drafts-close"
-  ).on("click", function () {
-    const $parent = $(this).parent().parent();
+    "button.close, button.portf-close, button.memory-close, button.computer-close, button.post-close, button.draft-close"
+  ).on("click", function (e) {
+    e.preventDefault(); // 기본 동작 방지
+    e.stopPropagation();
+
+    const $parent = $(this).closest('.desktop-folder');
     $parent.addClass("hidden");
 
-    const resetIcons = {
-      ".memory-close": () => {
-        $(".memory1").attr("src", "./src/img/memory.svg");
-        $(".proj").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
-      },
-      ".computer-close": () => {
-        $(".computer").attr("src", "./src/img/computer.svg");
-        $(".abt").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
-      },
-      ".post-close": () => {
-        $(".write").attr("src", "./src/img/write.svg");
-        $(".pst").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
-      },
-      ".draft-close": () => {
-        $(".draft_folder").attr("src", "./src/img/draft_folder.svg");
-        $(".dft").css({ backgroundColor: "#f5f5f5", color: "#0D0907" });
-      },
+    const closeBtnClass = $(this).attr("class");
+    const iconResetMap = {
+      "memory-close": ".memory1",
+      "computer-close": ".computer",
+      "post-close": ".write",
+      "draft-close": ".draft_folder",
+      "portf-close": null,
+      "close" : null
     };
 
-    const resetIcon = resetIcons[$(this).attr("class")];
-    if (resetIcon) resetIcon();
+    const iconSelector = iconResetMap[closeBtnClass];
+    if (iconSelector) {
+      const $icon = $(iconSelector);
+      const currentSrc = $icon.attr("src");
+      $icon.attr("src", currentSrc.replace("_click.svg", ".svg"));
+    }
+
+    const activeClassMap = {
+      "memory-close": ".proj",
+      "computer-close": ".abt",
+      "post-close": ".pst",
+      "draft-close": ".dft",
+      "portf-close": null,
+      "close" : null
+    };
+
+    const activeClass = activeClassMap[closeBtnClass];
+    if (activeClass) {
+      $(activeClass).css({
+        backgroundColor: "#f5f5f5",
+        color: "#0D0907",
+      });
+    }
   });
 
   $("section").on("click", function (event) {
